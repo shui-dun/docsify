@@ -11,7 +11,10 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      loadSidebar: true
+      loadSidebar: true,
+      search: {
+        maxAge: 86400000 // Expiration time, the default one day
+     }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
