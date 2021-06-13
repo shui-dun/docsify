@@ -22,6 +22,9 @@ class gen_sidebar:
     def set_list_dir(self):
         
         for parent, dirnames, filenames in os.walk(self.base_path,  followlinks=False):
+            
+            filenames = sorted(filenames, key=lambda x: os.path.getmtime(os.path.join(parent, x)), reverse=True)
+            
             for filename in filenames:
                 if self._is_allow_file(filename) == False:
                     continue
